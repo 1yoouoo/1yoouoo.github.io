@@ -7,6 +7,7 @@ import random
 
 # Create a StackAPI object for the Stack Overflow site
 print('#####################################################################')
+print('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')
 SITE = StackAPI('stackoverflow')
 one_year_ago = (datetime.utcnow() - timedelta(days=365)).strftime('%Y-%m-%d')
 
@@ -34,7 +35,7 @@ else:
 
 
 # (/[`~!@#$%^&*|\\\'\";:\/?]/gi, "");
-openai.api_key = "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"
+openai.api_key = os.environ.get('OPENAI_API_KEY')
 
 
 def generate_response(prompt, max_tokens, temperature):
