@@ -4,10 +4,14 @@ import os
 import time
 from datetime import datetime, timedelta
 import random
+import pytz
 
+seoul_tz = pytz.timezone('Asia/Seoul')
+now = datetime.datetime.now(seoul_tz)
 # Create a StackAPI object for the Stack Overflow site
 print('#####################################################################')
-print('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')
+# print('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')
+print(now)
 SITE = StackAPI('stackoverflow')
 one_year_ago = (datetime.utcnow() - timedelta(days=365)).strftime('%Y-%m-%d')
 
