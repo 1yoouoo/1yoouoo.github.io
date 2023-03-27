@@ -12,7 +12,7 @@ now = datetime.now(seoul_tz)
 print('#####################################################################')
 # print('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')
 print(now)
-SITE = StackAPI('stackoverflow')
+########### SITE = StackAPI('stackoverflow')
 one_year_ago = (datetime.utcnow() - timedelta(days=365)).strftime('%Y-%m-%d')
 
 # Random하게 tag선택
@@ -22,9 +22,12 @@ selected_tag = random.choice(tag_list)
 print(f'카테고리는 {selected_tag} 로 하겠습니다.')
 
 # Fetch the 10 most popular questions with the tag
-questions = SITE.fetch('questions', pagesize=10, fromdate=one_year_ago,
-                       sort='votes', order='desc', tagged=selected_tag)
-
+########### questions = SITE.fetch('questions', pagesize=30, fromdate=one_year_ago,
+###########                       sort='votes', order='desc', tagged=selected_tag)
+questions = {
+'items':{
+'title': 'convert a list to a dictionary in python',
+'tags' : ['python','list','dictionary']}}
 # Check if there are any questions in the response
 if not questions['items']:
     print("No questions found.")
@@ -32,7 +35,8 @@ if not questions['items']:
     print("프로그램 강제 종료.")
 else:
     # 0 ~ 50 한 개만 선택
-    question = questions['items'][random.randint(0, 50)]
+##########    question = questions['items'][random.randint(0, 50)]
+    question=questions['items']
     topic = question['title']
     tags = question['tags']
     print(f'주제는 {topic} 로 하겠습니다.')
