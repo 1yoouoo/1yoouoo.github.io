@@ -7,7 +7,7 @@ import random
 import pytz
 
 seoul_tz = pytz.timezone('Asia/Seoul')
-now = datetime.datetime.now(seoul_tz)
+now = datetime.now(seoul_tz)
 # Create a StackAPI object for the Stack Overflow site
 print('#####################################################################')
 # print('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')
