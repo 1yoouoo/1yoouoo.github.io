@@ -10,7 +10,7 @@ seoul_tz = pytz.timezone('Asia/Seoul')
 now = datetime.now(seoul_tz)
 # Create a StackAPI object for the Stack Overflow site
 print('#####################################################################')
-# print('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')
+# print('sk-iqaso9waIWt13kEszXtST3BlbkFJuTCS4vx0r4UWTJDZPDgc1yoouoo')
 print(now)
 SITE = StackAPI('stackoverflow')
 one_year_ago = (datetime.utcnow() - timedelta(days=365)).strftime('%Y-%m-%d')
@@ -145,7 +145,7 @@ output = page_outline + '\n' + \
 
 
 print("파일을 생성하기 전 잠깐 기다립니다.")
-blog_directory = r"./_posts"
+blog_directory = "/home/yoon/blog/1yoouoo.github.io/_posts"
 
 time.sleep(2)
 # 파일 이름 생성
