@@ -4,6 +4,8 @@ echo "1"
 cd /home/yoon/blog/1yoouoo.github.io
 echo $(pwd)
 #/usr/bin/python3 main.py
+sleep 5
+touch $(date)
 echo "2"
 
 # git push after python file
