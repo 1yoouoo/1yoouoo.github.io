@@ -3,6 +3,7 @@
 
 # git push after python file
 #if test $? -eq 0; then
+git pull
 git config --local user.name "blanc"
 git config --local user.email "1yoouoo@gmail.com" 
 git add .
