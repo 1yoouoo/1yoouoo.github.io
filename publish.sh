@@ -1,4 +1,5 @@
 # active python
+echo "started"
 /usr/bin/python3 main.py
 
 # git push after python file
