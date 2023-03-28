@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Error Creating Probot GitHub App: npm v8.0.0 Removal of Programmatic API
+title: "Error Creating Probot GitHub App: npm v8.0.0 Removal of Programmatic API"
 tags: ['javascript', 'node.js', 'npm', 'github-app', 'probot']
 ---
 
