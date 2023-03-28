@@ -6,10 +6,6 @@ from datetime import datetime, timedelta
 import random
 import pytz
 
-pid = str(os.getpid())
-with open('blog-publish.pid', 'w') as pidfile:
-    pidfile.write(pid)
-
 seoul_tz = pytz.timezone('Asia/Seoul')
 now = datetime.now(seoul_tz)
 # Create a StackAPI object for the Stack Overflow site
