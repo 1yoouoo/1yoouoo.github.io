@@ -1,5 +1,5 @@
 # active python
-#/usr/bin/python3 main.py
+/usr/bin/python3 main.py
 
 # git push after python file
 #if test $? -eq 0; then
