@@ -158,15 +158,12 @@ yesterday = datetime.now() - timedelta(days=1)
 
 timestring = yesterday.strftime('%Y-%m-%d')
 
-tmp = title[:]
-noFilename = '[\/:*?"<>|]'
-for no in noFilename:
-    tmp = tmp.replace(no, '')
-filename = f"{timestring}-{'-'.join(tmp.lower().split())}.md"
+title = title.replace('"', '')
+filename = f"{timestring}-{'-'.join(title.lower().split())}.md"
 
 page_outline = f'''---
 layout: post
-title: {title}
+title: "{title}"
 tags: {tags}
 ---
 '''
