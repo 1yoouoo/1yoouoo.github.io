@@ -22,7 +22,7 @@ selected_tag = random.choice(tag_list)
 print(f'카테고리는 {selected_tag} 로 하겠습니다.')
 try:
 	# Fetch the 10 most popular questions with the tag
-	questions = SITE.fetch('questions', pagesize=20, fromdate=one_year_ago, sort='votes', order='desc', tagged=selected_tag)
+	questions = SITE.fetch('questions', pagesize=10, fromdate=one_year_ago, sort='votes', order='desc', tagged=selected_tag)
 
 	# Check if there are any questions in the response
 	if not questions['items']:
@@ -31,7 +31,7 @@ try:
 	    print("프로그램 강제 종료.")
 	else:
 	    # 0 ~ 50 한 개만 선택
-	    question = questions['items'][random.randint(0, 100)]
+	    question = questions['items'][random.randint(0, 50)]
 	    topic = question['title']
 	    tags = question['tags']
 	    print(f'주제는 {topic} 로 하겠습니다.')
