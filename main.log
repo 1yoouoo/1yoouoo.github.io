@@ -8,3 +8,23 @@ Traceback (most recent call last):
   File "/home/yoon/.local/lib/python3.10/site-packages/stackapi/stackapi.py", line 212, in fetch
     raise StackAPIError(self._previous_call, error, code, message)
 stackapi.stackapi.StackAPIError: ('https://api.stackexchange.com/2.2/sites/?pagesize=1000&page=1&filter=%21%2AL1%2AAY-85YllAr2%29', 502, 'throttle_violation', 'too many requests from this IP, more requests available in 37818 seconds')
+#####################################################################
+2023-03-29 11:00:02.006138+09:00
+Traceback (most recent call last):
+  File "/home/yoon/blog/1yoouoo.github.io/main.py", line 15, in <module>
+    SITE = StackAPI('stackoverflow')
+  File "/home/yoon/.local/lib/python3.10/site-packages/stackapi/stackapi.py", line 72, in __init__
+    sites = self.fetch('sites', filter='!*L1*AY-85YllAr2)', pagesize=1000)
+  File "/home/yoon/.local/lib/python3.10/site-packages/stackapi/stackapi.py", line 212, in fetch
+    raise StackAPIError(self._previous_call, error, code, message)
+stackapi.stackapi.StackAPIError: ('https://api.stackexchange.com/2.2/sites/?pagesize=1000&page=1&filter=%21%2AL1%2AAY-85YllAr2%29', 502, 'throttle_violation', 'too many requests from this IP, more requests available in 37301 seconds')
+#####################################################################
+2023-03-29 13:00:01.471426+09:00
+Traceback (most recent call last):
+  File "/home/yoon/blog/1yoouoo.github.io/main.py", line 15, in <module>
+    SITE = StackAPI('stackoverflow')
+  File "/home/yoon/.local/lib/python3.10/site-packages/stackapi/stackapi.py", line 72, in __init__
+    sites = self.fetch('sites', filter='!*L1*AY-85YllAr2)', pagesize=1000)
+  File "/home/yoon/.local/lib/python3.10/site-packages/stackapi/stackapi.py", line 212, in fetch
+    raise StackAPIError(self._previous_call, error, code, message)
+stackapi.stackapi.StackAPIError: ('https://api.stackexchange.com/2.2/sites/?pagesize=1000&page=1&filter=%21%2AL1%2AAY-85YllAr2%29', 502, 'throttle_violation', 'too many requests from this IP, more requests available in 30103 seconds')
