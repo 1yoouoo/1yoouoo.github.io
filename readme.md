@@ -13,3 +13,6 @@
 3. 파이썬 파일 종료 후 git commit && push 실행
 4. push 트리거로 github Actions 실행
 5. 테스트 후 gh-page 배포
+
+
+
