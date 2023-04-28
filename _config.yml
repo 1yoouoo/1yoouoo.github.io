@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
 baseurl: ""
-url: "http://mullaepro.com"
+url: "https://mullaepro.com"
 
 # THEME-SPECIFIC CONFIGURATION
 title: Blanc # site's title
