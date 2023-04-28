@@ -1649,3 +1649,15 @@ stackapi.stackapi.StackAPIError: ('https://api.stackexchange.com/2.2/sites/?page
 파일을 생성하겠습니다.
 모든 작업이 끝났습니다.
 #####################################################################
+#####################################################################
+2023-04-28 15:00:01.707270+09:00
+카테고리는 reactjs 로 하겠습니다.
+주제는 Marker not showing @react-google-maps/api on localhost next.js 로 하겠습니다.
+제목 만들었습니다. "Marker Not Showing on Localhost with React-Google-Maps/API in Next.js" : 89
+본문 1/2 만들었습니다. : 935
+본문 2/2 만들었습니다. : 782
+참고할만한 사이트를 만들었습니다. "Marker Not Showing on Localhost with React-Google-Maps/API in Next.js" : 233
+파일을 생성하기 전 잠깐 기다립니다.
+파일을 생성하겠습니다.
+파일 생성 오류 발생 :  [Errno 2] No such file or directory: '/home/yoon/blog/1yoouoo.github.io/_posts/2023-04-27-marker-not-showing-on-localhost-with-react-google-maps/api-in-next.js.md'
+프로그램 종료.
