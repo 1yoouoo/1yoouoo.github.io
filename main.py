@@ -21,32 +21,36 @@ tag_list = ['javascript', 'typescript',
 selected_tag = random.choice(tag_list)
 print(f'카테고리는 {selected_tag} 로 하겠습니다.')
 try:
-	# Fetch the 10 most popular questions with the tag
-	questions = SITE.fetch('questions', pagesize=10, fromdate=one_year_ago, sort='votes', order='desc', tagged=selected_tag)
+    # Fetch the 10 most popular questions with the tag
+    questions = SITE.fetch('questions', pagesize=10, fromdate=one_year_ago,
+                           sort='votes', order='desc', tagged=selected_tag)
 
-	# Check if there are any questions in the response
-	if not questions['items']:
-	    print("No questions found.")
-	    os.exit()
-	    print("프로그램 강제 종료.")
-	else:
-	    # 0 ~ 50 한 개만 선택
-	    question = questions['items'][random.randint(0, 50)]
-	    topic = question['title']
-	    tags = question['tags']
-	    print(f'주제는 {topic} 로 하겠습니다.')
+    # Check if there are any questions in the response
+    if not questions['items']:
+        print("No questions found.")
+        os.exit()
+        print("프로그램 강제 종료.")
+    else:
+        # 0 ~ 50 한 개만 선택
+        question = questions['items'][random.randint(0, 50)]
+        topic = question['title']
+        tags = question['tags']
+        print(f'주제는 {topic} 로 하겠습니다.')
 except Exception as e:
-	print("StackAPI 오류발생 : ", e)
-	raise SystemExit("프로그램 종료.")
+    print("StackAPI 오류발생 : ", e)
+    raise SystemExit("프로그램 종료.")
 
 # (/[`~!@#$%^&*|\\\'\";:\/?]/gi, "");
 openai.api_key = os.environ.get('OPEN_API_KEY')
 
 
 def generate_response(prompt, max_tokens, temperature):
-    completion = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=prompt,
+    completion = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": "You are a blog post generator."},
+            {"role": "user", "content": prompt}
+        ],
         max_tokens=max_tokens,
         temperature=temperature,      # creativity
         top_p=1,
@@ -115,38 +119,38 @@ def generate_blog_recommend_site(title):
 
 
 try:
-	# 제목 생성
-	title_response = generate_blog_to_title(topic)
-	title = '\n'.join(
-	    title_response['choices'][0]['text'].strip().split('\n')[:])
-	print(f"제목 만들었습니다. {title} :",
-	      title_response["usage"]["total_tokens"])
+    # 제목 생성
+    title_response = generate_blog_to_title(topic)
+    title = '\n'.join(
+        title_response['choices'][0]['message']['content'].strip().split('\n')[:])
+    print(f"제목 만들었습니다. {title} :",
+          title_response["usage"]["total_tokens"])
 except Exception as e:
-        print("제목 오류발생 : ", e)
-        raise SystemExit("프로그램 종료.")
+    print("제목 오류발생 : ", e)
+    raise SystemExit("프로그램 종료.")
 
 try:
-	# 본문 생성
-	common_error_response = generate_blog_common_error(title)
-	common_error = '\n'.join(
-	    common_error_response['choices'][0]['text'].strip().split('\n')[1:])
-	print("본문 1/2 만들었습니다. :",
-	      common_error_response["usage"]["total_tokens"])
+    # 본문 생성
+    common_error_response = generate_blog_common_error(title)
+    common_error = '\n'.join(
+        common_error_response['choices'][0]['message']['content'].strip().split('\n')[1:])
+    print("본문 1/2 만들었습니다. :",
+          common_error_response["usage"]["total_tokens"])
 
-	error_body_response = generate_blog_error_body(title)
-	error_body = '\n'.join(
-	    error_body_response['choices'][0]['text'].strip().split('\n')[1:])
-	print("본문 2/2 만들었습니다. :",
-	      error_body_response["usage"]["total_tokens"])
+    error_body_response = generate_blog_error_body(title)
+    error_body = '\n'.join(
+        error_body_response['choices'][0]['message']['content'].strip().split('\n')[1:])
+    print("본문 2/2 만들었습니다. :",
+          error_body_response["usage"]["total_tokens"])
 except Exception as e:
-        print("본문 오류발생 : ", e)
-        raise SystemExit("프로그램 종료.")
+    print("본문 오류발생 : ", e)
+    raise SystemExit("프로그램 종료.")
 
 try:
     # 참고할만한 사이트
     recommend_site_response = generate_blog_recommend_site(title)
     recommend_site = '\n'.join(
-        recommend_site_response['choices'][0]['text'].strip().split('\n')[:])
+        recommend_site_response['choices'][0]['message']['content'].strip().split('\n')[:])
     print(f"참고할만한 사이트를 만들었습니다. {title} :",
           recommend_site_response["usage"]["total_tokens"])
 except Exception as e:
@@ -173,11 +177,12 @@ output = page_outline + '\n' + \
     '\n' + common_error + '\n' + error_body + '\n' + recommend_site
 
 print("파일을 생성하기 전 잠깐 기다립니다.")
-blog_directory = "/home/yoon/blog/1yoouoo.github.io/_posts"
+# blog_directory = "/home/yoon/blog/1yoouoo.github.io/_posts"
+mac_directory = "/Users/blanc/Documents/Project/1yoouoo.github.io/_posts"
 
 time.sleep(2)
 # 파일 이름 생성
-filepath = os.path.join(blog_directory, filename)
+filepath = os.path.join(mac_directory, filename)
 
 try:
     print("파일을 생성하겠습니다.")
