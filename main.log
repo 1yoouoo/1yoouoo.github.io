@@ -122,3 +122,11 @@ KeyboardInterrupt
 파일을 생성하겠습니다.
 모든 작업이 끝났습니다.
 #####################################################################
+#####################################################################
+2023-05-18 20:51:09.506848+09:00
+카테고리는 typescript 로 하겠습니다.
+주제는 NextRouter was not mounted Next.JS 로 하겠습니다.
+제목 만들었습니다. Understanding and Resolving the NextRouter Not Mounted Error in Next.js : 82
+본문 1/2 만들었습니다. : 1374
+본문 오류발생 :  Request timed out: HTTPSConnectionPool(host='api.openai.com', port=443): Read timed out. (read timeout=600)
+프로그램 종료.
