@@ -168,3 +168,15 @@ KeyboardInterrupt
 제목 만들었습니다. Understanding the "Uncaught TypeError: Cannot read properties of null" Error in Stack Overflow : 112
 본문 오류발생 :  Bad gateway. {"error":{"code":502,"message":"Bad gateway.","param":null,"type":"cf_bad_gateway"}} 502 {'error': {'code': 502, 'message': 'Bad gateway.', 'param': None, 'type': 'cf_bad_gateway'}} {'Date': 'Sun, 28 May 2023 08:28:38 GMT', 'Content-Type': 'application/json', 'Content-Length': '84', 'Connection': 'keep-alive', 'X-Frame-Options': 'SAMEORIGIN', 'Referrer-Policy': 'same-origin', 'Cache-Control': 'private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0', 'Expires': 'Thu, 01 Jan 1970 00:00:01 GMT', 'Server': 'cloudflare', 'CF-RAY': '7ce518a70937c0f2-ICN', 'alt-svc': 'h3=":443"; ma=86400'}
 프로그램 종료.
+#####################################################################
+2023-05-30 12:52:07.239160+09:00
+카테고리는 css 로 하겠습니다.
+주제는 Rails - Turbo - link preload but not used within a few seconds from the window&#39;s load event 로 하겠습니다.
+제목 만들었습니다. Understanding and Resolving the Turbo-Link Preload Error in Rails : 95
+본문 1/2 만들었습니다. : 1449
+본문 2/2 만들었습니다. : 1384
+참고할만한 사이트를 만들었습니다. Understanding and Resolving the Turbo-Link Preload Error in Rails : 194
+파일을 생성하기 전 잠깐 기다립니다.
+파일을 생성하겠습니다.
+모든 작업이 끝났습니다.
+#####################################################################
