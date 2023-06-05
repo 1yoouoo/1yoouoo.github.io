@@ -177,12 +177,12 @@ output = page_outline + '\n' + \
     '\n' + common_error + '\n' + error_body + '\n' + recommend_site
 
 print("파일을 생성하기 전 잠깐 기다립니다.")
-# blog_directory = "/home/yoon/blog/1yoouoo.github.io/_posts"
-mac_directory = "/Users/blanc/Documents/ChatGPT/1yoouoo.github.io/_posts"
+blog_directory = "/home/yoon/blog/1yoouoo.github.io/_posts"
+# mac_directory = "/Users/blanc/Documents/ChatGPT/1yoouoo.github.io/_posts"
 
 time.sleep(2)
 # 파일 이름 생성
-filepath = os.path.join(mac_directory, filename)
+filepath = os.path.join(blog_directory, filename)
 
 try:
     print("파일을 생성하겠습니다.")
