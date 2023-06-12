@@ -10,7 +10,6 @@ seoul_tz = pytz.timezone('Asia/Seoul')
 now = datetime.now(seoul_tz)
 # Create a StackAPI object for the Stack Overflow site
 print('#####################################################################')
-# print('sk-iqaso9waIWt13kEszXtST3BlbkFJuTCS4vx0r4UWTJDZPDgc1yoouoo')
 print(now)
 SITE = StackAPI('stackoverflow')
 one_year_ago = (datetime.utcnow() - timedelta(days=365)).strftime('%Y-%m-%d')
@@ -126,6 +125,7 @@ try:
     print(f"제목 만들었습니다. {title} :",
           title_response["usage"]["total_tokens"])
 except Exception as e:
+    print("title", title)
     print("제목 오류발생 : ", e)
     raise SystemExit("프로그램 종료.")
 
