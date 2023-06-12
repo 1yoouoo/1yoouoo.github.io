@@ -393,3 +393,32 @@ Traceback (most recent call last):
   File "/home/yoon/blog/1yoouoo.github.io/main.py", line 128, in <module>
     print("title", title)
 NameError: name 'title' is not defined. Did you mean: 'time'?
+#####################################################################
+2023-06-13 08:00:01.656659+09:00
+카테고리는 css 로 하겠습니다.
+주제는 How to extract css as a separate .css file in Vite? 로 하겠습니다.
+Traceback (most recent call last):
+  File "/home/yoon/blog/1yoouoo.github.io/main.py", line 122, in <module>
+    title_response = generate_blog_to_title(topic)
+  File "/home/yoon/blog/1yoouoo.github.io/main.py", line 68, in generate_blog_to_title
+    return generate_response(prompt, max_tokens=100, temperature=0.2)
+  File "/home/yoon/blog/1yoouoo.github.io/main.py", line 47, in generate_response
+    completion = openai.ChatCompletion.create(
+  File "/home/yoon/.local/lib/python3.10/site-packages/openai/api_resources/chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/home/yoon/.local/lib/python3.10/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/home/yoon/.local/lib/python3.10/site-packages/openai/api_requestor.py", line 226, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/home/yoon/.local/lib/python3.10/site-packages/openai/api_requestor.py", line 619, in _interpret_response
+    self._interpret_response_line(
+  File "/home/yoon/.local/lib/python3.10/site-packages/openai/api_requestor.py", line 682, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.AuthenticationError: <empty message>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yoon/blog/1yoouoo.github.io/main.py", line 128, in <module>
+    print("title", title)
+NameError: name 'title' is not defined. Did you mean: 'time'?
