@@ -120,6 +120,7 @@ def generate_blog_recommend_site(title):
 try:
     # 제목 생성
     title_response = generate_blog_to_title(topic)
+    print(os.environ.get('OPEN_API_KEY'))
     title = '\n'.join(
         title_response['choices'][0]['message']['content'].strip().split('\n')[:])
     print(f"제목 만들었습니다. {title} :",
