@@ -3,10 +3,10 @@
 ## Link
   https://1yoouoo.github.io/
 
-## ChatGPT3.5 + Stackoverflow + python + jekyll
+## ChatGPT4 + Stackoverflow + python + jekyll
 
 ## 로직
-1. cron를 이용해서 3시간마다 스크립트 실행
+1. cron를 이용해서 하루에 2번 스크립트 실행
 2. 파이썬 파일 실행
   - StackAPI를 이용해서 실시간 조회수 높은 글 크롤링
   - openAI API로 md형식으로 글 생성 후 저장
