@@ -39,13 +39,11 @@ except Exception as e:
     print("StackAPI 오류발생 : ", e)
     raise SystemExit("프로그램 종료.")
 
-# (/[`~!@#$%^&*|\\\'\";:\/?]/gi, "");
 openai.api_key = os.environ.get('OPEN_API_KEY')
-
 
 def generate_response(prompt, max_tokens, temperature):
     completion = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-4-0613",
         messages=[
             {"role": "system", "content": "You are a blog post generator."},
             {"role": "user", "content": prompt}
@@ -120,7 +118,6 @@ def generate_blog_recommend_site(title):
 try:
     # 제목 생성
     title_response = generate_blog_to_title(topic)
-    print(os.environ.get('OPEN_API_KEY'))
     title = '\n'.join(
         title_response['choices'][0]['message']['content'].strip().split('\n')[:])
     print(f"제목 만들었습니다. {title} :",
